@@ -19,7 +19,6 @@ add_executable(${PROJECT_NAME}
 )
 
 target_link_libraries(${PROJECT_NAME}
-    SceCtrl_stub
     SceKernelThreadMgr_stub
     SceLibKernel_stub
     ScePower_stub
@@ -38,7 +37,6 @@ add_executable(${PROJECT_NAME}_statusbar
 )
 
 target_link_libraries(${PROJECT_NAME}_statusbar
-    SceCtrl_stub
     SceKernelThreadMgr_stub
     SceLibKernel_stub
     ScePower_stub
