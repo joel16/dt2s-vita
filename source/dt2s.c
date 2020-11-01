@@ -113,7 +113,7 @@ int module_start(SceSize args, void *argp) {
             return ret;
     }
     
-    thread_id = sceKernelCreateThread("dt2s", dt2s_thread, 0x40, 0x40000, 0, 0, NULL);
+    thread_id = sceKernelCreateThread("dt2s", dt2s_thread, 0x10000100, 0x1000, 0, 0, NULL);
     sceKernelStartThread(thread_id, 0, NULL);
     return SCE_KERNEL_START_SUCCESS;
 }
