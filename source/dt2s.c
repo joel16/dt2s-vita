@@ -94,7 +94,7 @@ static int dt2s_thread(SceSize args, void *argp) {
                 scePowerRequestSuspend();
         }
         
-        sceKernelDelayThread(50 * 1000);
+        sceKernelDelayThread(100000);
     }
     
     return 0;
@@ -113,7 +113,8 @@ int module_start(SceSize args, void *argp) {
             return ret;
     }
     
-    thread_id = sceKernelCreateThread("dt2s", dt2s_thread, 0x10000100, 0x1000, 0, 0, NULL);
+    // SCE_KERNEL_LOWEST_PRIORITY_USER (= 191) http://wiki.henkaku.xyz/vita/SceKernelThreadMgr#sceKernelCreateThreadForUser
+    thread_id = sceKernelCreateThread("dt2s", dt2s_thread, 191, 0x1000, 0, 0, NULL);
     sceKernelStartThread(thread_id, 0, NULL);
     return SCE_KERNEL_START_SUCCESS;
 }
