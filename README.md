@@ -19,12 +19,12 @@ Open your tai config and add the following:
 1) If you want to use the dt2s_statusbar.suprx only on the homescreen (Recommended)
 ```
 *main
-ux0:tai/dt2s_statusbar.suprx
+ur0:tai/dt2s_statusbar.suprx
 ```
 
 2) If you want to use dt2s.suprx available for a specific application:
 ```
 # titleid for your application
 *ALL
-ux0:tai/dt2s.suprx
+ur0:tai/dt2s.suprx
 ```
